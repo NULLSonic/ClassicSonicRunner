@@ -9,6 +9,13 @@ func _ready():
 	$Title.visible = false
 	intro_player.play("sega")
 
+func _process(delta):
+	if Input.is_action_just_pressed("gm_start") and intro_player.current_animation_position >= 15:
+		intro_player.stop()
+		$AudioStreamPlayer.stop()
+		Global.soundtrack.play()
+		Global.main.changeScene(nextScene)
+
 func _on_intro_player_animation_finished(anim_name):
 	if anim_name == "sega":
 		$Sega.visible = false

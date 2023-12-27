@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxoh3eojhsmtl"]
+[gd_scene load_steps=21 format=3 uid="uid://dxoh3eojhsmtl"]
 
 [ext_resource type="Script" path="res://scripts/menus/MainMenu.gd" id="1_k6jiu"]
 [ext_resource type="Texture2D" uid="uid://2q7n1g6ojva8" path="res://assets/img/gradiant/HGradiant.png" id="1_s7o5u"]
@@ -10,12 +10,104 @@
 [ext_resource type="Texture2D" uid="uid://cpeoexewwh87c" path="res://assets/img/menus/mainMenu/pad/xButton.png" id="5_mom4f"]
 [ext_resource type="FontFile" uid="uid://dd8xd5hnqlljs" path="res://assets/fonts/sonic-hud-life.ttf" id="5_wa860"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fs51y"]
+[sub_resource type="LabelSettings" id="LabelSettings_g1xqj"]
 font = ExtResource("3_dyeu7")
-font_size = 32
-font_color = Color(0.333333, 0.843137, 0.988235, 1)
-outline_size = 16
-outline_color = Color(0.180392, 0.184314, 0.647059, 1)
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_34pbd"]
+resource_name = "maxPad"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay/BG:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(392, 192), Vector2(424, 240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlay/BG:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(16, 16), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay/BG/Decorations:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(376, 26), Vector2(408, 26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Overlay/BG/Decorations/button:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(360, 18), Vector2(392, 18)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Overlay/BG/Panel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(112, 56), Vector2(128, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_80wkq"]
+resource_name = "showExit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay/BG/Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sajtu"]
+resource_name = "tabBarslide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay/BG/Decorations:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(8, -28), Vector2(8, 6)]
+}
 
 [sub_resource type="Animation" id="Animation_7krbo"]
 resource_name = "transition"
@@ -70,6 +162,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr1in"]
 _data = {
+"maxPad": SubResource("Animation_34pbd"),
+"showExit": SubResource("Animation_80wkq"),
+"tabBarslide": SubResource("Animation_sajtu"),
 "transition": SubResource("Animation_7krbo")
 }
 
@@ -102,6 +197,23 @@ font = ExtResource("5_wa860")
 font_size = 8
 font_color = Color(1, 1, 1, 0.501961)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj0r7"]
+bg_color = Color(0, 0.423529, 0.972549, 0.501961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.0862745, 1, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6imf"]
+font = ExtResource("3_dyeu7")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_k6jiu")
 
@@ -132,34 +244,18 @@ position = Vector2(212, 80)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yq2b5")
 
-[node name="teamCS" type="Label" parent="BG"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -54.0
-offset_top = 92.0
-offset_right = 370.0
-offset_bottom = 124.0
-scale = Vector2(1.25, 1.25)
-text = "TEAM CS"
-label_settings = SubResource("LabelSettings_fs51y")
-horizontal_alignment = 1
-
-[node name="presents" type="Label" parent="BG"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -54.0
-offset_top = 138.0
-offset_right = 370.0
-offset_bottom = 170.0
-scale = Vector2(1.25, 1.25)
-text = "PRESENTS"
-label_settings = SubResource("LabelSettings_fs51y")
-horizontal_alignment = 1
-
 [node name="pressEnter" type="Sprite2D" parent="BG"]
 position = Vector2(212, 200)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_34brh")
+
+[node name="Label" type="Label" parent="BG"]
+layout_mode = 0
+offset_top = 232.0
+offset_right = 46.0
+offset_bottom = 255.0
+text = "VERSION:"
+label_settings = SubResource("LabelSettings_g1xqj")
 
 [node name="transitions" type="AnimationPlayer" parent="."]
 libraries = {
@@ -219,3 +315,47 @@ offset_bottom = 22.0
 text = "MAIN MENU"
 label_settings = SubResource("LabelSettings_xln8f")
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Overlay/BG"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 280.0
+offset_bottom = 152.0
+scale = Vector2(1e-05, 1e-05)
+theme_override_styles/panel = SubResource("StyleBoxFlat_jj0r7")
+
+[node name="proceed?" type="Label" parent="Overlay/BG/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 31.0
+text = "DO YOU WISH TO PROCEED?"
+label_settings = SubResource("LabelSettings_g6imf")
+autowrap_mode = 2
+
+[node name="yes" type="Label" parent="Overlay/BG/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 64.0
+offset_bottom = 79.0
+text = "YES <"
+label_settings = SubResource("LabelSettings_g6imf")
+autowrap_mode = 2
+
+[node name="no" type="Label" parent="Overlay/BG/Panel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 79.0
+text = "> NO"
+label_settings = SubResource("LabelSettings_g6imf")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[connection signal="pressed" from="Overlay/BG/Decorations/button/hideButton" to="." method="_on_hide_button_pressed"]
+[connection signal="pressed" from="Overlay/BG/Decorations/button/maxButton" to="." method="_on_max_button_pressed"]
+[connection signal="pressed" from="Overlay/BG/Decorations/button/xButton" to="." method="_on_x_button_pressed"]

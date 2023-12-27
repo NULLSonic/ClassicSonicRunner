@@ -99,3 +99,9 @@ texture = ExtResource("4_po4t7")
 libraries = {
 "": SubResource("AnimationLibrary_nkpaq")
 }
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
