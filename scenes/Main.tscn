@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt6q4fpilh5mf"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_invk8"]
+[ext_resource type="PackedScene" uid="uid://ovwn3b4ddkkt" path="res://scenes/Presentation/TitleScreen.tscn" id="1_x5n0m"]
+[ext_resource type="AudioStream" uid="uid://dcrbdfufw152u" path="res://assets/audio/Soundtrack/03 - Main Menu.mp3" id="3_c5h8i"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_invk8")
+
+[node name="SceneLoader" type="Node" parent="."]
+
+[node name="TitleScreen" parent="SceneLoader" instance=ExtResource("1_x5n0m")]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_c5h8i")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 128
