@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxoh3eojhsmtl"]
+[gd_scene load_steps=16 format=3 uid="uid://dxoh3eojhsmtl"]
 
+[ext_resource type="Script" path="res://scripts/menus/MainMenu.gd" id="1_k6jiu"]
 [ext_resource type="Texture2D" uid="uid://2q7n1g6ojva8" path="res://assets/img/gradiant/HGradiant.png" id="1_s7o5u"]
 [ext_resource type="Texture2D" uid="uid://drdpsm428veph" path="res://assets/img/menus/title/logo.png" id="2_yq2b5"]
 [ext_resource type="FontFile" uid="uid://dqixer2paxk61" path="res://assets/fonts/NiseSegaSonic.TTF" id="3_dyeu7"]
 [ext_resource type="Texture2D" uid="uid://cm0ow8g3cjqbt" path="res://assets/img/menus/title/pressStart.png" id="4_34brh"]
+[ext_resource type="Texture2D" uid="uid://cecdpjyajg1ec" path="res://assets/img/menus/mainMenu/pad/hide.png" id="5_bwsai"]
+[ext_resource type="Texture2D" uid="uid://b3pg706iat4jm" path="res://assets/img/menus/mainMenu/pad/max.png" id="5_hrgl8"]
+[ext_resource type="Texture2D" uid="uid://cpeoexewwh87c" path="res://assets/img/menus/mainMenu/pad/xButton.png" id="5_mom4f"]
+[ext_resource type="FontFile" uid="uid://dd8xd5hnqlljs" path="res://assets/fonts/sonic-hud-life.ttf" id="5_wa860"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fs51y"]
 font = ExtResource("3_dyeu7")
@@ -17,7 +22,7 @@ resource_name = "transition"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pressEnter:position")
+tracks/0/path = NodePath("BG/pressEnter:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,38 +34,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BG:position")
+tracks/1/path = NodePath("BG/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(-144, -72), Vector2(-25, -72)]
+"values": [Vector2(212, 80), Vector2(212, 120)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/path = NodePath("BG/Sprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(212, 80), Vector2(112, 72)]
+"values": [Vector2(0.5, 0.5), Vector2(0.4, 0.4)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/path = NodePath("Overlay:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.4, 0.4)]
+"values": [Vector2(0, -240), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr1in"]
@@ -68,9 +73,46 @@ _data = {
 "transition": SubResource("Animation_7krbo")
 }
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45ev8"]
+bg_color = Color(0, 0.423529, 0.972549, 0.501961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.0862745, 1, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="BGColor" type="ColorRect" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7efg"]
+bg_color = Color(0, 0.423529, 0.972549, 0.501961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.0862745, 1, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_xln8f"]
+font = ExtResource("5_wa860")
+font_size = 8
+font_color = Color(1, 1, 1, 0.501961)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_k6jiu")
+
+[node name="BG" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BGColor" type="ColorRect" parent="BG"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = -24.0
 offset_right = 464.0
@@ -78,28 +120,21 @@ offset_bottom = 264.0
 color = Color(0.352941, 0.831373, 0.992157, 1)
 metadata/_edit_lock_ = true
 
-[node name="gradiant" type="Sprite2D" parent="."]
+[node name="gradiant" type="Sprite2D" parent="BG"]
 modulate = Color(0, 0.529412, 1, 1)
 position = Vector2(-8, 0)
 scale = Vector2(1.03774, 1)
 texture = ExtResource("1_s7o5u")
 centered = false
 
-[node name="BG" type="ColorRect" parent="."]
-offset_left = -25.0
-offset_top = -72.0
-offset_right = 127.0
-offset_bottom = 280.0
-rotation = 0.261799
-color = Color(0, 0, 0, 0.501961)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(112, 72)
-scale = Vector2(0.4, 0.4)
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(212, 80)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yq2b5")
 
-[node name="teamCS" type="Label" parent="."]
+[node name="teamCS" type="Label" parent="BG"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = -54.0
 offset_top = 92.0
 offset_right = 370.0
@@ -109,8 +144,9 @@ text = "TEAM CS"
 label_settings = SubResource("LabelSettings_fs51y")
 horizontal_alignment = 1
 
-[node name="presents" type="Label" parent="."]
+[node name="presents" type="Label" parent="BG"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = -54.0
 offset_top = 138.0
 offset_right = 370.0
@@ -120,12 +156,66 @@ text = "PRESENTS"
 label_settings = SubResource("LabelSettings_fs51y")
 horizontal_alignment = 1
 
-[node name="pressEnter" type="Sprite2D" parent="."]
-position = Vector2(212, 280)
+[node name="pressEnter" type="Sprite2D" parent="BG"]
+position = Vector2(212, 200)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_34brh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="transitions" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_xr1in")
 }
+
+[node name="Overlay" type="Node2D" parent="."]
+position = Vector2(0, -240)
+
+[node name="BG" type="Panel" parent="Overlay"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 208.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_45ev8")
+
+[node name="Decorations" type="Panel" parent="Overlay/BG"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 384.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7efg")
+
+[node name="button" type="HBoxContainer" parent="Overlay/BG/Decorations"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 368.0
+offset_bottom = 22.0
+alignment = 2
+
+[node name="hideButton" type="TextureButton" parent="Overlay/BG/Decorations/button"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_bwsai")
+
+[node name="maxButton" type="TextureButton" parent="Overlay/BG/Decorations/button"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_hrgl8")
+
+[node name="xButton" type="TextureButton" parent="Overlay/BG/Decorations/button"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_mom4f")
+
+[node name="Label" type="Label" parent="Overlay/BG/Decorations"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 22.0
+text = "MAIN MENU"
+label_settings = SubResource("LabelSettings_xln8f")
+vertical_alignment = 1

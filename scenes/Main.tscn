@@ -1,8 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt6q4fpilh5mf"]
+[gd_scene load_steps=8 format=3 uid="uid://bt6q4fpilh5mf"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_invk8"]
 [ext_resource type="PackedScene" uid="uid://ovwn3b4ddkkt" path="res://scenes/Presentation/TitleScreen.tscn" id="1_x5n0m"]
 [ext_resource type="AudioStream" uid="uid://dcrbdfufw152u" path="res://assets/audio/Soundtrack/03 - Main Menu.mp3" id="3_c5h8i"]
+[ext_resource type="Texture2D" uid="uid://2q7n1g6ojva8" path="res://assets/img/gradiant/HGradiant.png" id="4_po4t7"]
+
+[sub_resource type="Animation" id="Animation_f0juu"]
+resource_name = "fadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(-666, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_frk5b"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(424, 240), Vector2(1100, 240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkpaq"]
+_data = {
+"fadeIn": SubResource("Animation_f0juu"),
+"fadeOut": SubResource("Animation_frk5b")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_invk8")
@@ -18,3 +79,23 @@ stream = ExtResource("3_c5h8i")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 128
+
+[node name="Fade" type="Node2D" parent="GUI"]
+
+[node name="Fade" type="ColorRect" parent="GUI/Fade"]
+offset_left = -666.0
+offset_right = -242.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Fade/Fade"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(544, 120)
+rotation = 1.57079
+scale = Vector2(0.566, 1)
+texture = ExtResource("4_po4t7")
+
+[node name="fadePlayer" type="AnimationPlayer" parent="GUI/Fade"]
+libraries = {
+"": SubResource("AnimationLibrary_nkpaq")
+}
