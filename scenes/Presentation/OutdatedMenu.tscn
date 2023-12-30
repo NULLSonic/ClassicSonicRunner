@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceyml2uyylhub"]
+
+[ext_resource type="Texture2D" uid="uid://2q7n1g6ojva8" path="res://assets/img/gradiant/HGradiant.png" id="1_7e7k0"]
+[ext_resource type="Script" path="res://scripts/menus/OutdatedMenu.gd" id="1_m4rjs"]
+[ext_resource type="FontFile" uid="uid://dd8xd5hnqlljs" path="res://assets/fonts/sonic-hud-life.ttf" id="3_khbgp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hgs4"]
+font = ExtResource("3_khbgp")
+font_size = 64
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydbqc"]
+font = ExtResource("3_khbgp")
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="OutdatedMenu" type="Node2D"]
+script = ExtResource("1_m4rjs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.478431, 1, 1)
+scale = Vector2(4.5283, 4.5)
+texture = ExtResource("1_7e7k0")
+centered = false
+
+[node name="Text" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 32.0
+text = "=== GAME OUTDATED ==="
+label_settings = SubResource("LabelSettings_0hgs4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 248.0
+offset_right = 1792.0
+offset_bottom = 1080.0
+text = "Oh no! Looks like your game is outdated.
+
+Your's game version is:
+
+
+Whilst the up to date version is:
+
+
+
+
+
+
+
+
+
+Press \"Enter\" now to head to the GitHub Repo and update it. Or press \"Backspace\" to ignore this message."
+label_settings = SubResource("LabelSettings_ydbqc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="urVersion" type="Label" parent="."]
+offset_top = 416.0
+offset_right = 1920.0
+offset_bottom = 460.0
+text = "YOUR VERSION"
+label_settings = SubResource("LabelSettings_ydbqc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="upToDate" type="Label" parent="."]
+offset_top = 560.0
+offset_right = 1920.0
+offset_bottom = 604.0
+text = "upToDate"
+label_settings = SubResource("LabelSettings_ydbqc")
+horizontal_alignment = 1
+autowrap_mode = 2
