@@ -29,3 +29,8 @@ Because:
 
 ## Modding Help
 Will be added when the first playable version releases.
+
+## To Do
+
+- [] Gameplay
+ - [] Basic Player Movement
