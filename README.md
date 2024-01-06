@@ -32,6 +32,9 @@ Will be added when the first playable version releases.
 
 ## To Do
 
-- [] Gameplay
-	- [] Basic Player Movement (Triple Jump, Octuple(8) Jump and Dash Attack)
-	- [] 
+To see how the developement of the game is going I'm adding a To Do list here.
+And to see how it's going ima add this here:
+
+- 🟢 Completly done!
+- 🟡 Done, but still needs some work.
+- 🔴 Not started.
