@@ -6,7 +6,7 @@ Classic Sonic Runners (CSRunner or CSR for short.) is a remake of Sonic Runners 
 Sonic Runners was a free to play sidescrolling endless runner game for Android and iOS that was published in 2015 and got discountinued in 2016 and closing it's servers. And since Sonic Runners needed an all time online connection to the server you couldn't play it at all anymore. The gameplay was really easy to understand.
 The player-character was constantly running forward and. To avoid obstacles and enemies the player needed to touch the screen in order to make the player-character jump. The game had a lot of characters from the Sonic franchise Everybody was split into 3 play styles.
 
-- Speed: The player was able to perform a tirple jump with this character
+- Speed: The player was able to perform a triple jump with this character
 - Fly: The player was able to jump 8 eights and then slowly descend down to the ground.
 - Power: The player was able to perform a dash attack which could destroy metal badniks.
 
@@ -31,10 +31,13 @@ Because:
 Will be added when the first playable version releases.
 
 ## To Do
-
 To see how the developement of the game is going I'm adding a To Do list here.
 And to see how it's going ima add this here:
 
 - 🟢 Completly done!
 - 🟡 Done, but still needs some work.
+- 🟠 In work.
 - 🔴 Not started.
+
+### Characters
+I first thought there wouldn't be that many but uhhh.
