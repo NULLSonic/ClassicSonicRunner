@@ -41,6 +41,7 @@ Every character type also had their own bonuses:
 
 If you want to know more about the game then do either one of these:
 [Read the games wiki.](https://sonic.fandom.com/wiki/Sonic_Runners)
+
 [or watch this Video. It's really good](https://www.youtube.com/watch?v=WyRmHTxeMEw&t=2472s)
 
 ## Why is this project open source?
