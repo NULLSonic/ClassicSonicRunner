@@ -171,4 +171,6 @@ focus_mode = 0
 texture_normal = ExtResource("6_foiu5")
 
 [node name="KeyButton" parent="." instance=ExtResource("8_po8sk")]
-position = Vector2(-440, 72)
+bgColor = Color(0.196078, 0.203922, 0.266667, 1)
+borderColor = Color(0.121569, 0.12549, 0.168627, 1)
+txtText = "A"
