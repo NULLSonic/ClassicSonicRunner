@@ -33,4 +33,5 @@ Will be added when the first playable version releases.
 ## To Do
 
 - [] Gameplay
-	- [] Basic Player Movement
+	- [] Basic Player Movement (Triple Jump, Octuple(8) Jump and Dash Attack)
+	- [] 
