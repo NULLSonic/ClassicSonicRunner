@@ -1,5 +1,8 @@
 # Classic Sonic Runners
 
+[Official Discord Server](https://discord.gg/DMNN6Nfm8t)
+*Join to talk with other people, report a bug you found, suggest stuff you want to be added or to get exlusive teaser!*
+
 ## Table of Contents.
 
 Use this to easily find what you're looking for!
@@ -16,6 +19,11 @@ Use this to easily find what you're looking for!
 [Modding Help](https://github.com/NULLSonic/ClassicSonicRunner/tree/main?tab=readme-ov-file#modding-help)
 *If you wanna make mods with the game see here for full detail and tutorials.*
 
+[To Do](https://github.com/NULLSonic/ClassicSonicRunner#to-do)
+*See what I need to do and keep track of it.*
+
+[To Do/Character](https://github.com/NULLSonic/ClassicSonicRunner#characters)
+*Every character that's planned to be in the game.*
 
 ## What's Classic Sonic Runners?
 Classic Sonic Runners (CSRunner or CSR for short.) is a remake of Sonic Runners in Godot, but with classic Sonic characters. If you don't know what Sonic Runners is lemme explain it real quick.
@@ -43,7 +51,7 @@ If you want to know more about the game then do either one of these:
 
 [Read the games wiki.](https://sonic.fandom.com/wiki/Sonic_Runners)
 
-[or watch this Video. It's really good](https://www.youtube.com/watch?v=WyRmHTxeMEw&t=2472s)
+[or watch this Video. It's really good](https://www.youtube.com/watch?v=WyRmHTxeMEw)
 
 ## Why is this project open source?
 Because:
@@ -53,10 +61,6 @@ Because:
 
 ## Modding Help
 Will be added when the first playable version releases. (Might use the GitHub Repo Wiki for that.)
-
-## Planned Stuff (Not To Do!)
-
-I plan that every character has their own abilities and bonuses. Which I will not reveal :P
 
 ## To Do
 To see how the developement of the game is going I'm adding a To Do list here.
