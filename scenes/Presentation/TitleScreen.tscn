@@ -335,6 +335,7 @@ libraries = {
 offset_left = -4.0
 offset_right = 1916.0
 offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -386,9 +387,11 @@ texture = ExtResource("9_ap4lk")
 [node name="teamCS" type="Label" parent="Title"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_top = 400.0
-offset_right = 1920.0
-offset_bottom = 528.0
+offset_left = -240.0
+offset_top = 360.0
+offset_right = 1680.0
+offset_bottom = 488.0
+scale = Vector2(1.25, 1.25)
 text = "TEAM CS"
 label_settings = SubResource("LabelSettings_4go63")
 horizontal_alignment = 1
@@ -396,9 +399,11 @@ horizontal_alignment = 1
 [node name="presents" type="Label" parent="Title"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_top = 540.0
-offset_right = 1920.0
-offset_bottom = 668.0
+offset_left = -240.0
+offset_top = 580.0
+offset_right = 1680.0
+offset_bottom = 708.0
+scale = Vector2(1.25, 1.25)
 text = "PRESENTS"
 label_settings = SubResource("LabelSettings_4go63")
 horizontal_alignment = 1

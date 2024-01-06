@@ -29,10 +29,8 @@ func _input(event):
 			
 		if AudioServer.get_bus_volume_db(0) - 10 >= -80:
 			AudioServer.set_bus_volume_db(0, AudioServer.get_bus_volume_db(0) - 10)
-		
-		await volumeSlider.animation_finished
+
 		volumeTimer.start()
-	
 	
 	if event.is_action_released("gm_volume_up"):
 		if !volumePanelOpen:
@@ -41,8 +39,7 @@ func _input(event):
 			
 		if AudioServer.get_bus_volume_db(0) < 0:
 			AudioServer.set_bus_volume_db(0, AudioServer.get_bus_volume_db(0) + 10)
-		
-		await volumeSlider.animation_finished
+			
 		volumeTimer.start()
 
 func changeScene(file = ""):
@@ -55,7 +52,6 @@ func changeScene(file = ""):
 	$SceneLoader.add_child(instance)
 	
 	fade_player.play_backwards("fade")
-
 
 
 func _on_volume_timer_timeout():

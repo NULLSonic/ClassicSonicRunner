@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxoh3eojhsmtl"]
+[gd_scene load_steps=14 format=3 uid="uid://dxoh3eojhsmtl"]
 
 [ext_resource type="Script" path="res://scripts/menus/MainMenu.gd" id="1_k6jiu"]
 [ext_resource type="Texture2D" uid="uid://2q7n1g6ojva8" path="res://assets/img/gradiant/HGradiant.png" id="1_s7o5u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2cj2r8hq3ujh" path="res://assets/img/menus/mainMenu/pad/max.png" id="5_444is"]
 [ext_resource type="Texture2D" uid="uid://dord11j4rwyg4" path="res://assets/img/menus/mainMenu/pad/xButton.png" id="6_foiu5"]
 [ext_resource type="PackedScene" uid="uid://ccdlo431ufrnl" path="res://objects/players/sonic/s1.tscn" id="7_g62us"]
+[ext_resource type="PackedScene" uid="uid://bo5lnj68rdnnk" path="res://objects/misc/keyButton.tscn" id="8_po8sk"]
 
 [sub_resource type="Animation" id="Animation_ha2iv"]
 resource_name = "slideIn"
@@ -168,3 +169,6 @@ texture_normal = ExtResource("5_444is")
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("6_foiu5")
+
+[node name="KeyButton" parent="." instance=ExtResource("8_po8sk")]
+position = Vector2(-440, 72)

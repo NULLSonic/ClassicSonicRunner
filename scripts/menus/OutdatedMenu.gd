@@ -3,6 +3,7 @@ extends Node2D
 var nextScene = preload("res://scenes/Presentation/MainMenu.tscn")
 
 func _ready():
+	Global.changeTitle("Outdated Game. Please update!")
 	$urVersion.text = Global.version
 	$upToDate.text = Global.newVersion
 

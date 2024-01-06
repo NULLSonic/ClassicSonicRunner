@@ -22,6 +22,12 @@ func _process(_delta):
 	if Global.version != curVersion:
 		nextScene = preload("res://scenes/Presentation/OutdatedMenu.tscn")
 	
+	if intro_player.current_animation != "":
+		if intro_player.current_animation == "sega":
+			Global.changeTitle("Credits Intro")
+		elif intro_player.current_animation_position >= 10.5 and intro_player.current_animation == "titleAnim":
+			Global.changeTitle("Title")
+	
 	if Input.is_action_just_pressed("gm_start"):
 		if intro_player.current_animation_position >= 15 and intro_player.current_animation == "titleAnim":
 			intro_player.stop()

@@ -142,6 +142,7 @@ libraries = {
 }
 
 [node name="volumeTimer" type="Timer" parent="GUI/Volume"]
+wait_time = 2.0
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
